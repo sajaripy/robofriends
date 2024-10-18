@@ -26,7 +26,8 @@ class App extends Component {
   render() {
     const { robots, searchfield } = this.state;
     const fileredRobots = robots.filter(robot => {
-      return robot.name.toLocaleLowerCase().includes(searchfield.toLocaleLowerCase())
+      // return robot.name.toLocaleLowerCase().includes(searchfield.toLocaleLowerCase()) || robot.email.toLocaleLowerCase().includes(searchfield.toLocaleLowerCase())robot.name.toLocaleLowerCase().includes(searchfield.toLocaleLowerCase())
+      return `${robot.name} ${robot.email}`.toLocaleLowerCase().includes(searchfield.toLocaleLowerCase())
     })
     if (!robots.length) {
       return <h1>Loading</h1>
